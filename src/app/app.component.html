@@ -20,16 +20,13 @@
 
         <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
 
+    </div>
 
-
-        <div *ngFor="let team of teams">
-            <p></p>
-            <h3>Team {{ teams.indexOf(team) + 1 }} </h3>
-            <div class="ui card">
-                <p *ngFor="let member of team">{{ member }}</p>
-            </div>
-        </div>
+    <div *ngIf="teams.length" class="teams-container">
+        <app-team *ngFor="let team of teams; let i = index" [team]="team" [index]="i">
+        </app-team>
 
     </div>
+
 
 </div>
